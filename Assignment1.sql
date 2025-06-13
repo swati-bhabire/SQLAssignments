@@ -76,9 +76,16 @@ update customer set city = 'Oslo' where country = 'Norway';
 delete from customer where country = 'Norway';
 
 -- 15. Use the MIN function to select the record with the smallest value of the Price column.
+select min(prodPrice) from products;
+
 -- 16. Use an SQL function to select the record with the highest value of the Price column.
+select max(prodPrice) from products;
+
 -- 17. Use the correct function to return the number of records that have the Price value set to 20
+select count(*) from products where prodPrice = 20;
+
 -- 18. Use an SQL function to calculate the average price of all products.
+select avg(prodPrice) from products;
 
 -- 19. Use an SQL function to calculate the sum of all the Price column values in the Products table
 select sum(prodPrice) from products;
@@ -133,12 +140,20 @@ select * from products where prodName between 'Geitost' and 'Pavlova';
 select postalcode as 'Pno' from customer;
 
 -- 35. When displaying the Customers table, refer to the table as Consumers instead of Customers.
+select * from customer as consumer;
+
 -- 36. List the number of customers in each country.
+select count(customerid), country from customer group by country;
+
 -- 37. List the number of customers in each country, ordered by the country with the most customers first.
+select count(customerid), country from customer group by country order by count(customerid) desc;
+
 -- 38. Write the correct SQL statement to create a new database called testDB.
 create database testDB;
+
 -- 39. Write the correct SQL statement to delete a database named testDB
 drop database testDB;
+
 -- 40. Add a column of type DATE called Birthday in Persons table
 create table person
 (
@@ -149,8 +164,4 @@ alter table person add birthday varchar(20);
 
 -- 41. Delete the column Birthday from the Persons table
 alter table person drop birthday;
-
-
-
-
 
