@@ -41,3 +41,4 @@ select job_id, count(*) as 'Total Employee' from employees group by job_id;
 select location_id, count(department_id) as 'Total Department' from departments group by location_id having count(DEPARTMENT_ID) > 2;
 
 -- 9. Find the max salary for each job id and department should be 60,90,100,110
+select job_id, department_id, max(salary) as 'Max Salary' from employees where department_id IN(60,90,100,110) group by job_id, department_id;
