@@ -1,4 +1,5 @@
 create database hospital;
+drop table admissions;
 
 create table patients 
 (
